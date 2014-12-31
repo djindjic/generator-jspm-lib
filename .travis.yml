@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-jspm-lib' ]; then cd .. && eval "mv $currentfolder generator-jspm-lib" && cd generator-jspm-lib; fi
