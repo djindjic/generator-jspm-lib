@@ -1,5 +1,23 @@
-// Karma configuration
-// Generated on Wed Dec 24 2014 17:40:57 GMT+0100 (CET)
+var browsers = {
+  sl_firefox: {
+    base: 'SauceLabs',
+    browserName: 'firefox',
+    platform: 'Linux',
+    version: '14'
+  },
+  sl_ios_safari: {
+    base: 'SauceLabs',
+    browserName: 'safari',
+    platform: 'OS X 10.8',
+    version: '6'
+  },
+  sl_ie_11: {
+    base: 'SauceLabs',
+    browserName: 'internet explorer',
+    platform: 'Windows 7',
+    version: '9'
+  }
+};
 
 module.exports = function(config) {
   var configuration = {
@@ -45,6 +63,10 @@ module.exports = function(config) {
     // enable / disable colors in the output (reporters and logs)
     colors: true,
 
+    browserDisconnectTimeout: 10 * 1000, // 10s
+    browserDisconnectTolerance: 2,
+    browserNoActivityTimeout: 2 * 60 * 1000, // 2m
+    captureTimeout: 0,
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
@@ -59,13 +81,7 @@ module.exports = function(config) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
 
-    customLaunchers: {
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
-
+    customLaunchers: browsers,
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
@@ -73,12 +89,7 @@ module.exports = function(config) {
   };
 
   if(process.env.TRAVIS){
-    configuration.browsers = ['Chrome_travis_ci'];
-    // configuration.reporters = configuration.reporters.concat(['coverage', 'coveralls']);
-    // configuration.coverageReporter = {
-    //   type : 'lcovonly',
-    //   dir : 'coverage/'
-    // };
+    configuration.browsers = Object.keys(browsers);
   }
 
   config.set(configuration);

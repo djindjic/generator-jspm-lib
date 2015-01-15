@@ -13,7 +13,7 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ' + chalk.red('JspmLib') + ' generator!'
+      'Welcome to the ' + chalk.red('JspmLib Generator') + ' generator!'
     ));
 
     var prompts = [{
@@ -39,7 +39,6 @@ module.exports = yeoman.generators.Base.extend({
   writing: {
     app: function () {
       this.copy('gitignore', '.gitignore');
-      this.copy('package.json', 'package.json');
       this.copy('jshintrc', '.jshintrc');
       this.copy('karma.conf.js', 'karma.conf.js');
       this.copy('travis.yml', '.travis.yml');
@@ -53,6 +52,7 @@ module.exports = yeoman.generators.Base.extend({
 
       this.template('gulpfile.js', 'gulpfile.js', context);
       this.template('README.md', 'README.md', context);
+      this.template('package.json', 'package.json', context);
     },
   },
 
