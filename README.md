@@ -48,7 +48,7 @@ or make a pull request to [JSPM Reigistry](https://github.com/jspm/registry)
 
 ##Setup Travis and Sauce Labs
 
-1. Sign up [Travis](https://travis-ci.org), and (Sauce Labs)[https://saucelabs.com/opensauce].
+1. Sign up to [Travis](https://travis-ci.org) and [Sauce Labs](https://saucelabs.com/opensauce).
 2. [Sync](https://travis-ci.org/profile) your Travis with GitHub account and [enable](https://travis-ci.org/profile) repository which you want to build.
 3. Go to Travis settings for your new lib and add followed [environment variables](http://blog.travis-ci.com/2014-08-22-environment-variables/) for sauce labs:
   - SAUCE_USERNAME with your registered Sauce Labs username
