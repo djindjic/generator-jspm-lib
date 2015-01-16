@@ -21,16 +21,10 @@ module.exports = yeoman.generators.Base.extend({
         name: 'githubUserName',
         message: 'Please eneter you github username?',
         store   : true
-      }, {
-        type    : 'input',
-        name    : 'name',
-        message : 'Your project name',
-        default : this.appname // Default to current folder name
-    }];
+      }];
 
     this.prompt(prompts, function (props) {
       this.githubUserName = props.githubUserName;
-      this.name = props.name;
 
       done();
     }.bind(this));
@@ -46,7 +40,7 @@ module.exports = yeoman.generators.Base.extend({
       this.directory('test', 'test');
 
       var context = { 
-        repo: this.name,
+        repo: this.appname,
         user: this.githubUserName 
       };
 
