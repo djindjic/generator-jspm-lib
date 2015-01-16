@@ -3,16 +3,7 @@
 Yeoman generator for creating ES6 javascript libraries with [JSPM](http://jspm.io/).
 Generated directory is configured to work with testing stack:
 
-[karma-jspm](https://github.com/Workiva/karma-jspm),
-
-[mocha](http://mochajs.org/),
-
-[chai](http://chaijs.com/),
-
-[sinon](http://sinonjs.org/),
-
-[travis](https://travis-ci.org/)
-
+[karma-jspm](https://github.com/Workiva/karma-jspm), [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [Sinon](http://sinonjs.org/), [Travis](https://travis-ci.org/), [Sauce Labs](https://saucelabs.com/)
 
 ##Installing generator
 
@@ -28,7 +19,7 @@ mkdir mylib & cd mylib
 yo jspm-lib
 ```
 
-Generator will ask you for your github username which will be used for jspm configuration.
+Generator will ask you for your GitHub username which will be used for jspm configuration.
 
 ##JSPM linking (with watching)
 
@@ -36,7 +27,7 @@ Generator will ask you for your github username which will be used for jspm conf
 gulp jspm-link
 ```
 
-##Depoly new release to github
+##Depoly new release to GitGub
 
 ```bash
 gulp deploy-master
@@ -56,3 +47,11 @@ jspm install github:USER/REPO
 ```
 
 or make a pull request to [JSPM Reigistry](https://github.com/jspm/registry)
+
+##Setup Travis and Sauce Labs
+
+First, you need to sign up [Travis](https://travis-ci.org), and (Sauce Labs)[https://saucelabs.com/opensauce].
+
+[Sync](https://travis-ci.org/profile) your Travis with GitHub account and [enable](https://travis-ci.org/profile) repository which you want to build.
+
+Go to Travis settings for your new lib and add [environment variables](http://blog.travis-ci.com/2014-08-22-environment-variables/) for sauce labs.
