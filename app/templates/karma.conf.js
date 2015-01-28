@@ -81,15 +81,14 @@ module.exports = function(config) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
 
-    customLaunchers: browsers,
-
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
   };
 
   if(process.env.TRAVIS){
-    configuration.browsers = Object.keys(browsers);
+    configuration.customLaunchers = capabilities;
+    configuration.browsers = Object.keys(capabilities);
   }
 
   config.set(configuration);
