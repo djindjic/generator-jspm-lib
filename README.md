@@ -70,7 +70,7 @@ or make a pull request to [JSPM Reigistry](https://github.com/jspm/registry)
   1. Go to Travis settings for your new lib and add followed [environment variables](http://blog.travis-ci.com/2014-08-22-environment-variables/) for sauce labs:
     - SAUCE_USERNAME with your registered Sauce Labs username
     - SAUCE_ACCESS_KEY with your Sauce Labs access key which you can find at lower left angle of [account](https://saucelabs.com/account) page
-  2. Or run followed commands ([travis cli](https://github.com/travis-ci/travis.rb#env) requred):
+  2. Or run followed commands ([travis cli](https://github.com/travis-ci/travis.rb#env) required):
   ```bash
   travis env set SAUCE_USERNAME my_sauce_user
   travis env set SAUCE_ACCESS_KEY my_sauce_key
