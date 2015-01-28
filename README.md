@@ -25,7 +25,7 @@ Generator will ask you for your GitHub username which will be used for jspm conf
 gulp jspm-link
 ```
 
-##Depoly new release to GitGub
+##Depoly new release to GitHub
 
 ```bash
 gulp deploy-master
@@ -37,11 +37,27 @@ gulp deploy-master
 karma start
 ```
 
+##Deploy to npm
+It is recommended by jspm to release your libraries to npm endpoint.
+You can setup travis to automaticaly publish your lib to npm by running this command:
+
+```bash
+travis setup npm
+```
+
+For more details see travis [documentation](http://docs.travis-ci.com/user/deployment/npm/).
+
 ##Using your library
 In any jspm project you can install your library with this command:
 
 ```bash
 jspm install github:USER/REPO
+```
+
+or
+
+```bash
+jspm install npm:REPO
 ```
 
 or make a pull request to [JSPM Reigistry](https://github.com/jspm/registry)
@@ -50,6 +66,12 @@ or make a pull request to [JSPM Reigistry](https://github.com/jspm/registry)
 
 1. Sign up to [Travis](https://travis-ci.org) and [Sauce Labs](https://saucelabs.com/opensauce).
 2. [Sync](https://travis-ci.org/profile) your Travis with GitHub account and [enable](https://travis-ci.org/profile) repository which you want to build.
-3. Go to Travis settings for your new lib and add followed [environment variables](http://blog.travis-ci.com/2014-08-22-environment-variables/) for sauce labs:
-  - SAUCE_USERNAME with your registered Sauce Labs username
-  - SAUCE_ACCESS_KEY with your Sauce Labs access key which you can find at lower left angle of [account](https://saucelabs.com/account) page
+3. Add travis environment variables by web interface or command line:
+  1. Go to Travis settings for your new lib and add followed [environment variables](http://blog.travis-ci.com/2014-08-22-environment-variables/) for sauce labs:
+    - SAUCE_USERNAME with your registered Sauce Labs username
+    - SAUCE_ACCESS_KEY with your Sauce Labs access key which you can find at lower left angle of [account](https://saucelabs.com/account) page
+  2. Or run followed commands:
+  ```bash
+  travis env set SAUCE_USERNAME my_sauce_user
+  travis env set SAUCE_ACCESS_KEY my_sauce_key
+  ```
