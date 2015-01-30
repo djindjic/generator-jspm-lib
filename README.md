@@ -29,15 +29,18 @@ Generator will ask you for your GitHub username which will be used for jspm conf
 ```bash
 gem install travis
 ```
+
 3. Enable you new lib repo for travis build by running comman:
 ```bash
 travis enable
 ```
+
 4. Add travis [environment variables](http://blog.travis-ci.com/2014-08-22-environment-variables/) by command line:
   ```bash
   travis env set SAUCE_USERNAME my_sauce_user
   travis env set SAUCE_ACCESS_KEY my_sauce_key
   ```
+  
 5. Set GitHub authentification to avoid GitHub rate limit:
 ```bash
 travis env set JSPM_AUTH "$(node -pe 'JSON.parse(process.argv[1]).endpoints.github.auth' "$(cat ~/.jspm/config)")"
