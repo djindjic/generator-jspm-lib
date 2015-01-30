@@ -78,5 +78,5 @@ or make a pull request to [JSPM Reigistry](https://github.com/jspm/registry)
 
 ##Set GitHub authentification
 ```bash
-travis env set JSPM_TOKEN "$(node -pe 'JSON.parse(process.argv[1]).endpoints.github.auth' "$(cat ~/.jspm/config)")"
+travis env set JSPM_AUTH "$(node -pe 'JSON.parse(process.argv[1]).endpoints.github.auth' "$(cat ~/.jspm/config)")"
 ```
