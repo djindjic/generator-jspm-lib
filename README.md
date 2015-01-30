@@ -21,6 +21,11 @@ yo jspm-lib
 
 Generator will ask you for your GitHub username which will be used for jspm configuration.
 
+###Set GitHub authentification to avoid GitHub rate limit:
+```bash
+jspm endpoint config github 
+```
+
 ###Setup Travis with Github and Sauce Labs
 
  1. We assume you have registered [GitHub](https://github.com/join), [NPM](https://www.npmjs.com/signup), [Travis](https://travis-ci.org) and [Sauce Labs](https://saucelabs.com/opensauce) accounts
@@ -41,7 +46,7 @@ Generator will ask you for your GitHub username which will be used for jspm conf
   travis env set SAUCE_ACCESS_KEY my_sauce_key
   ```
 
- 5. Set GitHub authentification to avoid GitHub rate limit:
+ 5. Set GitHub authentification to avoid GitHub rate limit in travis build:
   ```bash
   travis env set JSPM_AUTH "$(node -pe 'JSON.parse(process.argv[1]).endpoints.github.auth' "$(cat ~/.jspm/config)")"
   ```
