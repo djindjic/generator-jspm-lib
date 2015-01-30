@@ -75,6 +75,7 @@ or make a pull request to [JSPM Reigistry](https://github.com/jspm/registry)
   travis env set SAUCE_USERNAME my_sauce_user
   travis env set SAUCE_ACCESS_KEY my_sauce_key
   ```
+
 ##Set GitHub authentification
 ```bash
 travis env set JSPM_TOKEN "$(node -pe 'JSON.parse(process.argv[1]).endpoints.github.auth' "$(cat ~/.jspm/config)")"
