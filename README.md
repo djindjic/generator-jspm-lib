@@ -46,7 +46,7 @@ jspm endpoint config github
   travis env set SAUCE_ACCESS_KEY my_sauce_key
   ```
 
- 5. Set GitHub authentification to avoid GitHub rate limit in travis build:
+ 5. Set GitHub authentification env variable to avoid GitHub rate limit in travis build:
   ```bash
   travis env set JSPM_AUTH "$(node -pe 'JSON.parse(process.argv[1]).endpoints.github.auth' "$(cat ~/.jspm/config)")"
   ```
