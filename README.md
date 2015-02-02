@@ -63,7 +63,7 @@ jspm endpoint config github
 ###JSPM linking (with watching)
 
 ```bash
-gulp jspm-link
+gulp link
 ```
 
 ###Depoly new release to NPM
