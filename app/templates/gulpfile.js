@@ -20,6 +20,6 @@ gulp.task('deploy-master', function(){
 
 });
 
-gulp.task('jspm-link', function(cb) {
+gulp.task('link', function(cb) {
   watch(['lib/**/*'], shell.task(['jspm link github:<%= user %>/<%= repo %>@' + pkg.version + ' -y']));
 });
