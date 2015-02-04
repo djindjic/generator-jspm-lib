@@ -1,5 +1,6 @@
 {
   "name": "<%= repo %>",
+  "repository": "http://github.com/<%= user %>/<%= repo %>",
   "registry": "jspm",
   "version": "0.1.0",
   "main": "lib/index",
