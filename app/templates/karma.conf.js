@@ -1,3 +1,5 @@
+var pkg = require('./package.json');
+
 var capabilities = require('./sauce_labs_capabilities.js').capabilities;
 
 module.exports = function(config) {
@@ -71,7 +73,7 @@ module.exports = function(config) {
     configuration.customLaunchers = capabilities;
     configuration.browsers = Object.keys(capabilities);
     configuration.sauceLabs = {
-        testName: '<%= repo %> test'
+        testName: pkg.name + ' unit test'
     }
   }
 
