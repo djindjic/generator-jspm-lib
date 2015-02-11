@@ -1,5 +1,4 @@
 var pkg = require('./package.json');
-
 var capabilities = require('./sauce_labs_capabilities.js').capabilities;
 
 module.exports = function(config) {
