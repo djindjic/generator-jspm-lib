@@ -39,7 +39,7 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('jshintrc', '.jshintrc');
       this.copy('sauce_labs_capabilities.js', 'sauce_labs_capabilities.js');
       this.copy('travis.yml', '.travis.yml');
-      this.copy('karma.conf.js', '.karma.conf.js');
+      this.copy('karma.conf.js', 'karma.conf.js');
       this.directory('lib', 'lib');
       this.directory('test', 'test');
 
