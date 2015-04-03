@@ -36,16 +36,16 @@ module.exports = yeoman.generators.Base.extend({
   writing: {
     app: function () {
       this.copy('gitignore', '.gitignore');
-      this.copy('jshintrc', '.jshintrc');
+      this.copy('eslintrc', '.eslintrc');
       this.copy('sauce_labs_capabilities.js', 'sauce_labs_capabilities.js');
       this.copy('travis.yml', '.travis.yml');
       this.copy('karma.conf.js', 'karma.conf.js');
       this.directory('lib', 'lib');
       this.directory('test', 'test');
 
-      var context = { 
+      var context = {
         repo: this.appname,
-        user: this.githubUserName 
+        user: this.githubUserName
       };
 
       this.template('gulpfile.js', 'gulpfile.js', context);
