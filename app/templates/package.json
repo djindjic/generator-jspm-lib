@@ -5,7 +5,12 @@
   "version": "0.1.0",
   "main": "lib/index",
   "jspm": {
-    "format": "es6"
+    "format": "es6",
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
   },
   "devDependencies": {
     "chai": "^1.10.0",
