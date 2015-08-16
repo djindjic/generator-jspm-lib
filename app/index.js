@@ -22,7 +22,7 @@ module.exports = yeoman.generators.Base.extend({
     var prompts = [{
         type: 'input',
         name: 'githubUserName',
-        message: 'Please eneter you github username?',
+        message: 'Please enter you github username:',
         store   : true
       }];
 
